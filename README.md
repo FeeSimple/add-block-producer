@@ -1,43 +1,36 @@
-# Add a new producer to the testnet
+# Adding a new producer to the testnet
 
-The currently-deployed testnet (138.197.194.220) includes 4 producers running on same server.
-The testnet producer status can be viewed at here:
+The currently deployed testnet (138.197.194.220) includes 4 producers running on same server. The testnet producer status can be viewed here:
 
 https://feesimpletracker.io/producers
 
-The following instruction describes the steps for adding a new producer to the testnet.
-Ultimate goal is to get the testnet decentralized.
-
-In this instruction, the new producer whose name is `trungprod111` is located on the feesimplewallet server.
+The following instructions describe the steps for adding a new producer to the testnet. For this example, the new producer (trungprod111) is located on the feesimplewallet server.
 
 ### Need a staked account
 
-Can create a new account and request faucet with
+Create a new account and request faucet with:
 
 https://feesimplewallet.io/
 
-Remember to store the private key
-
-In this instruction, the newly-created account used as producer is `trungprod111`
+Remember to store the private key :)
 
 ### Deploy a producer on new server
 
-Server should have min 4GB RAM.
-A running producer normally occupies between 1.5GB RAM and 2GB RAM.
+A running producer normally occupies between 1.5GB RAM and 2GB RAM. However, your server should have min 4GB RAM. 
 
-Pre-built software on Ubuntu can be found at here
+Pre-built software on Ubuntu can be found here:
 
 https://drive.google.com/open?id=1RrnShLfefEKCzdmcsAIzeoKkreSjZMDn
 
-Download the needed software (nodeos, cleos and keosd) into the folder `start-new-producer`
-where it contains needed scripts.
+Download the required software (nodeos, cleos and keosd) into the folder `start-new-producer`
+which contains the needed scripts.
 
 Start the producer by executing the script `script_start_producer.sh`.
-For restarting the producer with preserved blockchain data, execute the script `script_restart_producer.sh`.
+To restart the producer with preserved blockchain data, execute the script `script_restart_producer.sh`.
 
-### Register the producer to join the testnet
+### Register the producer
 
-This is done by executing the following commands one by one:
+This is done by executing the following commands:
 
 ```
 1. Start wallet manager `keosd`
@@ -63,19 +56,19 @@ cleos --wallet-url http://localhost:6666 --url http://138.197.194.220:8877 syste
 
 ```
 
-Eventually, check if the new producer is incorporated into the testnet by viewing this:
+Check if the new producer is incorporated into the testnet by viewing this:
 
 https://feesimpletracker.io/
 
-and this
+and this:
 
 https://feesimpletracker.io/producers
 
-Noted that, producer name is identical to the account name used in the command `system regproducer`
+Note that the producer name is identical to the account name used in the command `system regproducer`
 
 ### Unregister the producer from the testnet
 
-This is done by executing the following commands one by one:
+This is done by executing the following commands:
 
 ```
 // Unapprove producer
@@ -86,15 +79,14 @@ cleos --wallet-url http://localhost:6666 --url http://138.197.194.220:8877 syste
 
 ```
 
-Noted that, after having unregistered, the producer is still producing blocks and is not really removed
-from the active producer list. Explanation can be found at here:
+Note that, after unregistered, the producer is still producing blocks and is not removed from the active producer list. An explanation can be found here:
 
 https://github.com/EOSIO/eos/issues/5531
 
 
 ### Stop the producer
 
-To completely turn off the producer so that it stops producing blocks, simply terminate the producer process.
+To turn off the producer so that it stops producing blocks, simply terminate the producer process.
 
 ```
 // Find the producer proc ID
@@ -120,12 +112,12 @@ kill -9 {PID}
 
 ### Check testnet status
 
-Open this link with some web browser:
+Open this link with a web browser:
 
 http://138.197.194.220:8877/v1/chain/get_info
 
 
-## If not work, do the following steps
+## If this does not work, perform the following steps:
 
 ### cd to folder of bios-boot-tutorial
 
