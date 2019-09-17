@@ -17,18 +17,32 @@ Remember to store the private key :)
 
 A running producer normally occupies between 1.5GB RAM and 2GB RAM. However, your server should have min 4GB RAM. 
 
+Access to the server.
+
 Download and install the EOSIO software (including `nodeos`, `cleos` and `keosd`) **version 1.6**
 https://github.com/EOSIO/eos/releases/tag/v1.6.0
 
+Git clone the following:
 
-Needed scripts are located in the sub-folder `start-new-producer`
+`git clone https://github.com/FeeSimple/add-block-producer.git`
 
-Start the producer by executing the script `script_start_producer.sh`.
-To restart the producer with preserved blockchain data, execute the script `script_restart_producer.sh`.
+cd in the sub-folder `start-new-producer`
+
+To start the producer:
+
+  - Set the params `producerKeyPair` and `producerName` in the script `script_start_producer.sh` 
+  
+  - To start the producer, run this cmd `./script_start_producer.sh`
+  
+  - To see log output, run this cmd `tail -f stderr`
+  
+  - To restart the producer with preserved blockchain data, run this cmd ` ./script_restart_producer.sh`.
 
 ### Register the producer
 
-This is done by executing the following commands:
+This can be done on your `localhost` or any other server that has the `cleos` and `keosd` installed.
+
+Execute the following commands:
 
 1. Start wallet manager `keosd`
 
