@@ -1,11 +1,11 @@
-# Script to start a new producer that is connected to the testnet via peer list
+# Script to restart a producer (with preserved blockchain data) that is connected to the blockchain network via peer list
 
 ## Producer params
-httpServerAddr=127.0.0.1:8005
-p2pListenEndpoint=0.0.0.0:9005
-producerName=trungprod111
-producerKeyPair='["EOS5sxsW17cvjcviWz4U6VSm9Ca84n6KkEbXk23eoX9GqMkYsfqYd","5KSGw8iY8eaVcLxLUTh4CUB2Wzc23afWoWwfKMHNbJUPk5amB7z"]'
-producerPeerList='--p2p-peer-address 138.197.194.220:9000 --p2p-peer-address 138.197.194.220:9001 --p2p-peer-address 138.197.194.220:9002'
+httpServerAddr=0.0.0.0:8001
+p2pListenEndpoint=0.0.0.0:9001
+producerName=prodwallet11
+producerKeyPair='["EOS7d4fQXjJnvsverft9ooGd2YnkzSd1xRLgFAUA6BrwDctUavxtt","5JhV5JtjxfKH8rYmoq75fSa8kJMKexLnB74cC48C1uCvgCwZBzR"]'
+producerPeerList='--p2p-peer-address 165.22.134.182:9000 --p2p-peer-address 165.22.134.182:9001 --p2p-peer-address 165.22.134.182:9002'
 producerPluginList='--plugin eosio::http_plugin --plugin eosio::chain_api_plugin --plugin eosio::producer_plugin'
 
 ## For restart
